@@ -1,0 +1,5 @@
+# Include system-wide settings
+$include /etc/inputrc
+
+# Enable case insensitve autocomplete
+set completion-ignore-case on
