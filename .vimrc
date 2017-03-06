@@ -6,28 +6,37 @@
 " disable vim beeps for windows 10
 set visualbell
 
+" Use unix line endings
+set ff=unix
+
 " make tabs 4 columns wide
-:set tabstop=4
+set tabstop=4
+set softtabstop=4
 " do not replace tabs with spaces
 :set noexpandtab
 
 " enable auto indenting
-:set autoindent
-:set cindent
+set autoindent
+set cindent
 " auto indent size to 4
-:set shiftwidth=4
+set shiftwidth=4
+
+" enable syntax highlighting
+syntax on
 
 " change syntax highlighting to dark background
-:set background=dark
+set background=dark
 
 " show line number
-:set number
+set number
 
 " highlight the current line you are on
-:set cursorline
+set cursorline
 
-:set incsearch           " search as characters are entered
-:set hlsearch            " highlight matches
+" search as characters are entered
+:set incsearch           
+" highlight matches
+:set hlsearch            
 
 " bind kj to escape
 :inoremap kj <Esc>
@@ -50,13 +59,15 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" Make css files indent correctly
-au BufEnter *.css set nocindent
-au BufLeave *.css set cindent
+" File specific settings
 
-" Disable cindent for text files
-au BufEnter *.txt set nocindent
-au BufLeave *.txt set cindent
+" css and txt
+au BufEnter *.css,*.txt set nocindent
+au BufLeave *.css,*.txt set cindent
+
+" py
+au BufEnter *.py set expandtab
+au BufLeave *.py set noexpandtab
 
 "change the title of terminal to the file you are editing
 let &titlestring = "vim(" . expand("%:t") . ")"
