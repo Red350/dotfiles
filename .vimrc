@@ -4,7 +4,8 @@
 "filetype plugin indent on
 
 " disable vim beeps for windows 10
-set visualbell
+set novisualbell
+set noerrorbells
 
 " Use unix line endings
 set ff=unix
