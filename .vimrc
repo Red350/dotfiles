@@ -31,8 +31,8 @@ set background=dark
 " show line number
 set number
 
-" highlight the current line you are on
-set cursorline
+" highlight the current line you are on (Currently disabled due to lag)
+"set cursorline
 
 " search as characters are entered
 :set incsearch           
@@ -70,12 +70,3 @@ au BufLeave *.css,*.txt set cindent
 au BufEnter *.py set expandtab
 au BufLeave *.py set noexpandtab
 
-"change the title of terminal to the file you are editing
-let &titlestring = "vim(" . expand("%:t") . ")"
-if &term == "screen"
-	set t_ts=^[k
-	set t_fs=^[\
-endif
-if &term == "screen" || &term == "xterm-256color"
-	set title
-endif
