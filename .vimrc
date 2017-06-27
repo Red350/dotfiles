@@ -3,6 +3,10 @@
 " allow plugins for individual files
 "filetype plugin indent on
 
+" case insensitive searching (case sensitive when you use a capital)
+set ignorecase
+set smartcase
+
 " disable vim beeps for windows 10
 set novisualbell
 set noerrorbells
@@ -13,8 +17,6 @@ set ff=unix
 " make tabs 4 columns wide
 set tabstop=4
 set softtabstop=4
-" do not replace tabs with spaces
-:set noexpandtab
 
 " enable auto indenting
 set autoindent
