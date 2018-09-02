@@ -9,7 +9,7 @@ set ignorecase
 set smartcase
 
 " disable vim beeps for windows 10
-set novisualbell
+set visualbell
 set noerrorbells
 
 " Use unix line endings
