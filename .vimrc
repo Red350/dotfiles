@@ -1,8 +1,27 @@
-" enable pathogen plugin manager
-"execute pathogen#infect()
+" Load plugins with vim-plug
+call plug#begin('~/.vim/plugged')
 
-" enable plugins and indenting for different filetypes
-filetype plugin indent on
+"Plug 'fatih/vim-go'
+
+Plug 'vim-jp/vim-go-extra'
+
+"Plug 'vim-syntastic/syntastic'
+
+"Plug 'rjohnsondev/vim-compiler-go'
+
+call plug#end()
+
+" Set go root
+let g:golang_goroot = "/home/red/go"
+
+" Set go compiler
+autocmd FileType go compiler go
+
+" gofmt on file save
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
+
+" Run goimports on file save
+let g:gofmt_command ="~/go/bin/goimports"
 
 " case insensitive searching (case sensitive when you use a capital)
 set ignorecase
@@ -63,3 +82,4 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+set backspace=indent,eol,start
